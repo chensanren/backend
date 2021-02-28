@@ -16,7 +16,6 @@ pipeline {
                     steps {
                         sh 'printenv'
                     }
-                }
         }
 
         stage('publish CBS..') {
@@ -26,7 +25,6 @@ pipeline {
                            steps {
                                sh 'printenv'
                            }
-                       }
         }
     }
 }
