@@ -1,25 +1,32 @@
 pipeline {
     agent any
-    environment {
-        // Using returnStdout
-        CC = """${sh(
-                returnStdout: true,
-                script: 'echo "clang"'
-            )}"""
-        // Using returnStatus
-        EXIT_STATUS = """${sh(
-                returnStatus: true,
-                script: 'exit 1'
-            )}"""
-    }
     stages {
-        stage('Example') {
+        stage('Test') {
             environment {
                 DEBUG_FLAGS = '-g'
             }
             steps {
-                sh 'printenv'
+                sh './gradlew clean build'
             }
+        }
+        stage('build jar') {
+                    environment {
+                        DEBUG_FLAGS = '-g'
+                    }
+                    steps {
+                        sh 'printenv'
+                    }
+                }
+        }
+
+        stage('publish CBS..') {
+                           environment {
+                               DEBUG_FLAGS = '-g'
+                           }
+                           steps {
+                               sh 'printenv'
+                           }
+                       }
         }
     }
 }
