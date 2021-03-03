@@ -14,7 +14,7 @@ pipeline {
                         DEBUG_FLAGS = '-g'
                     }
                     steps {
-                        sh 'printenv'
+                        sh 'ls'
                     }
         }
 
@@ -23,8 +23,8 @@ pipeline {
                                DEBUG_FLAGS = '-g'
                            }
                            steps {
-                               sh 'printenv'
-                           }
+                               sh 'pwd'
+                          }
         }
     }
 }
