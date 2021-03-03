@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'java  -version'
                 sh 'javac  -version'
-                sh './gradlew clean build'
+                sh './gradlew clean build -d'
             }
         }
 
