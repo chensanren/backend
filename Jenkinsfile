@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'java'
-                sh 'javac'
+                sh 'java  -version'
+                sh 'javac  -version'
                 sh './gradlew clean build'
             }
         }
