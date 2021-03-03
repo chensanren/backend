@@ -6,7 +6,7 @@ pipeline {
                 DEBUG_FLAGS = '-g'
             }
             steps {
-                sh './gradlew clean build'
+                sh 'gradlew clean build'
             }
         }
 
