@@ -2,23 +2,36 @@ pipeline {
     agent any
 
     stages {
-        stage('Test') {
+       stage('Prepare Env'){
+           env.git
+       }
+        stage('CBS Test') {
             steps {
-                sh 'java  -version'
-                sh 'javac  -version'
-                sh './gradlew clean build'
+                sh './gradlew clean test'
             }
         }
 
-        stage('build jar') {
+        stage('Build CBS Jar File') {
             steps {
-                 sh 'ls'
+                 sh './gradlew clean build'
             }
         }
 
-        stage('publish CBS..') {
+        stage('Build CBS Image File') {
            steps {
-                 sh 'pwd'
+                 sh 'podman build'
+           }
+        }
+
+        stage('Publish CBS Image to Registry') {
+            steps {
+                sh 'pwd'
+            }
+        }
+
+        stage('Run CBS') {
+           steps {
+                sh 'pwd'
            }
         }
     }
