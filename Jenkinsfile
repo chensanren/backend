@@ -3,7 +3,9 @@ pipeline {
 
     stages {
        stage('Prepare Env'){
-           sh 'echo $GIT_COMMIT'
+        steps {
+                   sh 'echo $GIT_COMMIT'
+               }
        }
         stage('CBS Test') {
             steps {
