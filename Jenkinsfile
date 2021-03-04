@@ -20,7 +20,7 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
-                docker.build("shuai/cds:lastest .")
+                sh 'docker.build("shuai/cds:lastest .")'
            }
         }
 
