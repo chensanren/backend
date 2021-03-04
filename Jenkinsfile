@@ -1,11 +1,8 @@
 pipeline {
-    agent {
-                  docker { image 'node:14-alpine' }
-              }
-
+    agent any
     stages {
        stage('Prepare Env'){
-        steps {
+            steps {
                    sh 'echo $GIT_COMMIT'
                }
        }
