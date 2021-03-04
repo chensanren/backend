@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+                  docker { image 'node:14-alpine' }
+              }
 
     stages {
        stage('Prepare Env'){
@@ -21,7 +23,7 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
-                 sh 'docker build -t shuai/cds:lastest .'
+                docker.build("shuai/cds:lastest .")
            }
         }
 
