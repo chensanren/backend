@@ -21,7 +21,7 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
-                 sh 'podman build'
+                 sh 'docker build -t shuai/cds:lastest .'
            }
         }
 
