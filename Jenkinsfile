@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+//     agent {
+//         label 'master'
+//     }
+   agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
        stage('Prepare Env'){
             steps {
@@ -20,6 +25,7 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
+           sh "master"
              docker.build "cbs:${env.BUILD_ID}"
            }
         }
