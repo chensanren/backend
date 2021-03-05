@@ -20,7 +20,7 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
-            script.sh docker.build("cbs:${env.BUILD_ID}")
+             docker.build "cbs:${env.BUILD_ID}"
            }
         }
 
