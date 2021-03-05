@@ -20,7 +20,8 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
-                docker build -t cbs:lastest .
+                docker build  .
+                //-t scottpeck.top:30001/cbs:lastest
            }
         }
 
