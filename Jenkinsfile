@@ -22,7 +22,6 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
-            sh 'systemctl start docker '
             sh 'docker build .'
             sh 'docker images'
            }
