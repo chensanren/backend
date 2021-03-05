@@ -20,7 +20,7 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
-                docker build  .
+                docker ps
            }
         }
 
