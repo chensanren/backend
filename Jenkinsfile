@@ -20,7 +20,7 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
-                sh 'docker build -t cns:lastest .'
+                docker build -t socketpeck.top/cbs:lastest .
            }
         }
 
