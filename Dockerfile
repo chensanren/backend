@@ -1,10 +1,4 @@
-FROM centos:centos8
-
-RUN yum install -y wget
-RUN wget http://212.64.66.31:30002/OpenJDK14U-jdk_x64_linux_hotspot_14.0.2_12.tar.gz
-RUN tar -zxvf OpenJDK14U-jdk_x64_linux_hotspot_14.0.2_12.tar.gz
-ENV PATH /jdk-14.0.2+12/bin:$PATH
-RUN pwd
+FROM centos/centos-jdk14:0.0.1
 
 RUN mkdir /jar
 ADD  ./build/libs/demo-0.0.1-SNAPSHOT.jar /jar/demo-0.0.1-SNAPSHOT.jar
