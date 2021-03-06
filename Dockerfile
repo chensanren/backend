@@ -1,6 +1,7 @@
 FROM centos:centos8
 
-ADD //var/jenkins_home/OpenJDK14U-jdk_x64_linux_hotspot_14.0.2_12.tar.gz /
+RUN yum install -y wget
+RUN wget https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14.0.2%2B12/OpenJDK14U-jdk_x64_linux_hotspot_14.0.2_12.tar.gz
 RUN tar -zxvf OpenJDK14U-jdk_x64_linux_hotspot_14.0.2_12.tar.gz
 ENV PATH /jdk-14.0.2+12/bin:$PATH
 RUN pwd
