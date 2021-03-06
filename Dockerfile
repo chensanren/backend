@@ -1,7 +1,7 @@
 FROM centos:centos8
 
 RUN yum install -y wget
-ADD /var/resource/OpenJDK14U-jdk_x64_linux_hotspot_14.0.2_12.tar.gz /
+COPY /var/resource/OpenJDK14U-jdk_x64_linux_hotspot_14.0.2_12.tar.gz /
 RUN tar -zxvf OpenJDK14U-jdk_x64_linux_hotspot_14.0.2_12.tar.gz
 ENV PATH /jdk-14.0.2+12/bin:$PATH
 RUN pwd
