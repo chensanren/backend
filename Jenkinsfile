@@ -22,6 +22,8 @@ pipeline {
 
         stage('Build CBS Image File') {
            steps {
+           sh 'docker stop cbs && docker rm cbs'
+           sh 'docker rmi localhost/cbs:0.0.1'
             sh 'docker build -t localhost/cbs:0.0.1 .'
            }
         }
@@ -34,7 +36,7 @@ pipeline {
 
         stage('Run CBS') {
            steps {
-                sh 'docker run -d -p 80:8080 localhost/cbs:0.0.1'
+                sh 'docker run --name cbs -d -p 80:8080 localhost/cbs:0.0.1 '
            }
         }
     }
