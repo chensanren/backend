@@ -7,7 +7,12 @@ import org.springframework.web.bind.annotation.RestController
 class HelloController {
 
     @GetMapping("/")
-    String hello() {
-        return "hello world!!"
+    ServerInfo hello() {
+        new ServerInfo(serverName: "CBS(classic-backend-service)",
+                serverAddress: "socttpeck.top",
+                serverStatus: "SUCCESS",
+                serverOwner: "Chen Shuai",
+                serverOwnerEmail: "chenshuai123456you2163.com",
+                serverOwnerWechat: "chenshuai_bot")
     }
 }

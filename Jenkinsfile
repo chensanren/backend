@@ -20,17 +20,16 @@ pipeline {
             }
         }
 
-        stage('Build CBS Image File') {
+        stage('remove old version cbs') {
            steps {
            sh 'docker stop cbs && docker rm cbs'
            sh 'docker rmi localhost/cbs:0.0.1'
-            sh 'docker build -t localhost/cbs:0.0.1 .'
            }
         }
 
-        stage('Publish CBS Image to Registry') {
+        stage('Build CBS Image File') {
             steps {
-                sh 'pwd'
+                sh 'docker build -t localhost/cbs:0.0.1 .'
             }
         }
 
