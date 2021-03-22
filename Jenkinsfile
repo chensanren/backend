@@ -10,7 +10,7 @@ pipeline {
        }
         stage('CBS Test') {
             steps {
-                sh './gradlew clean test'
+                sh './gradlew clean test -d'
             }
         }
 
